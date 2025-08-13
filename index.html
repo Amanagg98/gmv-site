@@ -3,175 +3,320 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>GMV Technologies — HTML Sitemap (Responsive)</title>
+<title>GMV Technologies — Site Map</title>
+<meta name="description" content="GMV Technologies interactive site map">
 <style>
-  :root{--bg:#0b0f14;--card:#121820;--muted:#98a2b3;--text:#eef2f7;--link:#7dd3fc;--link-hover:#c084fc;--border:#1f2937}
-  body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;background:#0b0f14;color:var(--text)}
-  header{position:sticky;top:0;z-index:10;display:flex;gap:12px;align-items:center;padding:12px 16px;background:#0b0f14e6;border-bottom:1px solid var(--border);backdrop-filter:blur(8px)}
-  #menuBtn{appearance:none;border:1px solid var(--border);background:#12182099;color:var(--text);padding:8px 10px;border-radius:10px;display:inline-flex;gap:8px;align-items:center}
+  :root{
+    --bg:#fafbff;
+    --card:#ffffff;
+    --ink:#0f172a;
+    --muted:#475569;
+    --ring:#e2e8f0;
+    --border:#e5e7eb;
+    --shadow:0 1px 2px rgba(16,24,40,.05), 0 4px 24px rgba(2,6,23,.06);
+    --brand:#2563eb;
+    --brand-2:#7c3aed;
+    --link:#1d4ed8;
+    --link-hover:#7c3aed;
+    --chip:#eef2ff;
+    --chip-text:#4338ca;
+    --grad:linear-gradient(135deg,#e0e7ff 0%, #fef9c3 40%, #c7d2fe 100%);
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+    color:var(--ink); background:var(--bg);
+  }
+  /* Header */
+  header{
+    position:sticky; top:0; z-index:50;
+    backdrop-filter:saturate(1.2) blur(10px);
+    background:rgba(255,255,255,.75);
+    border-bottom:1px solid var(--ring);
+    box-shadow:0 10px 30px rgba(2,6,23,.04);
+  }
+  .head{
+    max-width:1120px; margin:0 auto; padding:14px 16px;
+    display:flex; align-items:center; gap:12px;
+  }
+  .brand{
+    display:flex; align-items:center; gap:10px; font-weight:700; letter-spacing:.2px;
+  }
+  .logo{
+    width:28px; height:28px; border-radius:8px;
+    background: conic-gradient(from 180deg at 50% 50%, #60a5fa, #a78bfa, #34d399, #60a5fa);
+    box-shadow:inset 0 0 0 1px #fff;
+  }
+  .badge{font-size:12px; padding:4px 8px; border-radius:999px; background:var(--chip); color:var(--chip-text); border:1px solid #e0e7ff; display:none}
+  #menuBtn{
+    appearance:none; border:1px solid var(--ring); background:#fff; color:var(--ink);
+    padding:8px 10px; border-radius:10px; display:inline-flex; align-items:center; gap:8px; font-size:14px;
+    box-shadow: var(--shadow);
+  }
   #menuBtn svg{width:18px;height:18px}
-  .wrap{display:grid;grid-template-columns:1fr}
-  nav{position:fixed;inset:0 auto 0 0;width:280px;transform:translateX(-100%);transition:.25s;background:#121820f8;border-right:1px solid var(--border);padding:16px}
+  .head-actions{margin-left:auto; display:flex; align-items:center; gap:8px;}
+  .toast{opacity:0; transition:opacity .25s; font-size:12px; color:#059669}
+  /* Layout */
+  .wrap{display:grid; grid-template-columns:1fr}
+  nav{
+    position:fixed; inset:0 auto 0 0; width:300px; transform:translateX(-100%);
+    transition:transform .25s ease; background:#ffffff; border-right:1px solid var(--ring); z-index:40;
+    padding:18px 14px; box-shadow: var(--shadow);
+  }
   nav.open{transform:translateX(0)}
-  nav h2{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.12em;margin:8px 0 12px}
-  nav a{display:block;color:var(--link);text-decoration:none;padding:8px 10px;border-radius:8px}
-  nav a:hover{background:#7dd3fc14;color:var(--link-hover)}
-  main{padding:18px 16px 64px;max-width:1200px;margin:0 auto}
-  .section-card{border:1px solid var(--border);border-radius:16px;padding:16px;margin:12px 0 22px;background:linear-gradient(180deg,#121820cc,#12182080)}
-  .lede{color:#cbd5e1;margin:6px 0 12px;line-height:1.6}
-  .grid{display:grid;grid-template-columns:repeat(1,minmax(0,1fr));gap:10px}
-  .item{border:1px solid var(--border);border-radius:14px;padding:12px;background:#0b0f1424}
-  .item a{color:var(--link);text-decoration:none;font-weight:600}
+  nav h2{font-size:12px; color:var(--muted); text-transform:uppercase; letter-spacing:.12em; margin:8px 12px}
+  nav a{
+    display:flex; align-items:center; gap:10px;
+    color:var(--ink); text-decoration:none; font-size:14px;
+    padding:10px 12px; border-radius:10px; margin:2px 4px;
+  }
+  nav a:hover{background:#f8fafc}
+  .dot{width:8px;height:8px;border-radius:999px;background:radial-gradient(#22d3ee,#3b82f6)}
+  main{padding:24px 16px 64px; max-width:1120px; margin:0 auto}
+  /* Hero card */
+  .hero{
+    border:1px solid var(--ring); border-radius:20px; background:var(--card);
+    padding:20px; margin:16px 0 24px; box-shadow:var(--shadow);
+    background-image: var(--grad);
+    background-size: 160% 160%; background-position: 80% 20%;
+  }
+  .hero h1{margin:0 0 6px; font-size:22px}
+  .hero p{margin:6px 0 0; color:var(--muted)}
+  /* Section cards */
+  .card{
+    border:1px solid var(--ring); border-radius:18px; background:var(--card);
+    padding:16px; margin:14px 0 22px; box-shadow:var(--shadow);
+  }
+  .card h3{margin:0 0 8px; font-size:18px}
+  .lede{color:var(--muted); margin:4px 0 12px; line-height:1.6}
+  .grid{display:grid; grid-template-columns:repeat(1, minmax(0,1fr)); gap:12px}
+  .item{
+    border:1px solid var(--ring); border-radius:14px; padding:14px; background:#fff;
+    box-shadow: var(--shadow); transition:transform .12s ease, box-shadow .12s ease;
+  }
+  .item:hover{transform:translateY(-1px); box-shadow:0 6px 20px rgba(2,6,23,.07)}
+  .item a{color:var(--link); text-decoration:none; font-weight:650}
   .item a:hover{color:var(--link-hover)}
-  .slug{display:inline-block;margin-top:6px;font-family:ui-monospace,Menlo,monospace;font-size:12px;color:var(--muted)}
-  @media (min-width:900px){.wrap{grid-template-columns:280px 1fr}nav{position:sticky;transform:none;inset:auto;height:calc(100vh - 52px);top:52px;background:#12182099}#menuBtn{display:none}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-  @media (min-width:1200px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+  .slug{display:inline-block; margin-top:6px; font-family:ui-monospace, Menlo, monospace; font-size:12px; color:#64748b}
+  .copy{
+    border:1px dashed var(--ring); background:#f8fafc; padding:3px 8px; border-radius:8px; cursor:pointer;
+  }
+  details{border:1px solid var(--ring); border-radius:12px; padding:10px 12px; background:#f8fafc}
+  details summary{cursor:pointer; font-weight:650; color:#0f172a}
+  footer{padding:28px; color:#64748b; text-align:center}
+  /* Responsive */
+  @media (min-width: 900px){
+    .badge{display:inline-block}
+    .wrap{grid-template-columns:300px 1fr}
+    nav{position:sticky; transform:none; inset:auto; height:calc(100vh - 64px); top:64px}
+    #menuBtn{display:none}
+    .grid{grid-template-columns:repeat(2, minmax(0,1fr))}
+    .hero{padding:24px 26px; background-position: 100% 0}
+  }
+  @media (min-width: 1200px){
+    .grid{grid-template-columns:repeat(3, minmax(0,1fr))}
+  }
 </style>
 <script>
   function toggleNav(){document.querySelector('nav').classList.toggle('open')}
+  function copySlug(slug){navigator.clipboard.writeText(slug); const t=document.getElementById('toast'); if(!t) return; t.style.opacity=1; setTimeout(()=>t.style.opacity=0,1000);}
 </script>
 </head>
 <body>
   <header>
-    <button id="menuBtn" onclick="toggleNav()" aria-label="Toggle menu">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-      Menu
-    </button>
-    <h1 style="font-size:16px;margin:0">GMV Technologies — HTML Sitemap</h1>
-    <span style="margin-left:auto;font-size:12px;color:#a7f3d0" id="status"></span>
+    <div class="head">
+      <button id="menuBtn" onclick="toggleNav()" aria-label="Toggle menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        Menu
+      </button>
+      <div class="brand">
+        <span class="logo"></span>
+        GMV Technologies — Site Map
+      </div>
+      <span class="badge">Light • Responsive • Polished</span>
+      <div class="head-actions">
+        <span id="toast" class="toast">Copied ✓</span>
+      </div>
+    </div>
   </header>
+
   <div class="wrap">
     <nav>
       <h2>Top-level</h2>
-      <a href="#home" onclick="toggleNav()">Homepage</a>
-      <a href="#about" onclick="toggleNav()">About</a>
-      <a href="#services" onclick="toggleNav()">Solutions & Services</a>
-      <a href="#tech" onclick="toggleNav()">Tech Stack & Tooling</a>
-      <a href="#tracks" onclick="toggleNav()">Guided Growth Tracks</a>
-      <a href="#industries" onclick="toggleNav()">Industries</a>
-      <a href="#impact" onclick="toggleNav()">Results & Impact</a>
-      <a href="#work" onclick="toggleNav()">How We Work</a>
-      <a href="#clients" onclick="toggleNav()">Our Clients</a>
-      <a href="#cases" onclick="toggleNav()">Case Studies</a>
-      <a href="#testimonials" onclick="toggleNav()">Client Testimonials</a>
-      <a href="#insights" onclick="toggleNav()">Latest Articles</a>
-      <a href="#faqs" onclick="toggleNav()">FAQs</a>
-      <a href="#contact" onclick="toggleNav()">Contact Us</a>
+      <a href="#home" onclick="toggleNav()"><span class="dot"></span> Homepage</a>
+      <a href="#about" onclick="toggleNav()"><span class="dot"></span> About</a>
+      <a href="#services" onclick="toggleNav()"><span class="dot"></span> Solutions & Services</a>
+      <a href="#tech" onclick="toggleNav()"><span class="dot"></span> Tech Stack & Tooling</a>
+      <a href="#tracks" onclick="toggleNav()"><span class="dot"></span> Guided Growth Tracks</a>
+      <a href="#industries" onclick="toggleNav()"><span class="dot"></span> Industries</a>
+      <a href="#impact" onclick="toggleNav()"><span class="dot"></span> Results & Impact</a>
+      <a href="#work" onclick="toggleNav()"><span class="dot"></span> How We Work</a>
+      <a href="#clients" onclick="toggleNav()"><span class="dot"></span> Our Clients</a>
+      <a href="#cases" onclick="toggleNav()"><span class="dot"></span> Case Studies</a>
+      <a href="#testimonials" onclick="toggleNav()"><span class="dot"></span> Client Testimonials</a>
+      <a href="#insights" onclick="toggleNav()"><span class="dot"></span> Latest Articles</a>
+      <a href="#faqs" onclick="toggleNav()"><span class="dot"></span> FAQs</a>
+      <a href="#contact" onclick="toggleNav()"><span class="dot"></span> Contact Us</a>
     </nav>
+
     <main>
-      <section id="home" class="section-card">
+      <div class="hero">
+        <h1>Explore the GMV Site Structure</h1>
+        <p>Everything your visitors can access — grouped by purpose, with clean slugs. Click a slug to copy it.</p>
+      </div>
+
+      <section id="home" class="card">
         <h3>Homepage</h3>
-        <p class="lede"><strong>BUILD STRONGER | SCALE SMARTER | DELIVER FASTER</strong><br>At GMV Technologies, we don’t just build software, we accelerate ventures.</p>
-        <ul><li><strong>Trusted by:</strong> Client 1–8…</li><li><strong>Slug:</strong> <code>/</code></li></ul>
+        <p class="lede"><strong>BUILD STRONGER · SCALE SMARTER · DELIVER FASTER</strong> — We accelerate ventures with design, engineering, and enterprise transformation.</p>
+        <div class="grid">
+          <div class="item">
+            <a href="/">Home</a>
+            <div class="slug"><button class="copy" onclick="copySlug('/')"><code>/</code> Copy</button></div>
+          </div>
+        </div>
       </section>
-      <section id="about" class="section-card">
+
+      <section id="about" class="card">
         <h3>About GMV Technologies</h3>
-        <p class="lede">Engineering innovation through specialized divisions—where design-first thinking meets robust engineering and enterprise transformation.</p>
+        <p class="lede">Engineering innovation through specialized divisions — where design-first thinking meets robust engineering.</p>
         <div class="grid">
-          <div class="item"><a href="/about">About</a><div class="slug">/about</div></div>
-          <div class="item"><a href="/about/mission-vision">Mission & Vision</a><div class="slug">/about/mission-vision</div></div>
-          <div class="item"><a href="/about/approach">Our Approach</a><div class="slug">/about/approach</div></div>
-          <div class="item"><a href="/about/leadership">Leadership</a><div class="slug">/about/leadership</div></div>
-          <div class="item"><a href="/about/careers">Careers</a><div class="slug">/about/careers</div></div>
+          <div class="item"><a href="/about">About</a><div class="slug"><button class="copy" onclick="copySlug('/about')"><code>/about</code> Copy</button></div></div>
+          <div class="item"><a href="/about/mission-vision">Mission & Vision</a><div class="slug"><button class="copy" onclick="copySlug('/about/mission-vision')"><code>/about/mission-vision</code> Copy</button></div></div>
+          <div class="item"><a href="/about/approach">Our Approach</a><div class="slug"><button class="copy" onclick="copySlug('/about/approach')"><code>/about/approach</code> Copy</button></div></div>
+          <div class="item"><a href="/about/leadership">Leadership</a><div class="slug"><button class="copy" onclick="copySlug('/about/leadership')"><code>/about/leadership</code> Copy</button></div></div>
+          <div class="item"><a href="/about/careers">Careers</a><div class="slug"><button class="copy" onclick="copySlug('/about/careers')"><code>/about/careers</code> Copy</button></div></div>
         </div>
       </section>
-      <section id="services" class="section-card">
+
+      <section id="services" class="card">
         <h3>Solutions & Services</h3>
-        <p class="lede">We turn ideas into scalable digital products across design, engineering, enterprise, blockchain, and cloud.</p>
+        <p class="lede">From concept to scale — GMV Studio, Forge, Core, Chain, and CloudOps.</p>
         <div class="grid">
-          <div class="item"><a href="/services">Services Hub</a><div class="slug">/services</div></div>
-          <div class="item"><a href="/services/gmv-studio">GMV Studio</a><div class="slug">/services/gmv-studio</div></div>
-          <div class="item"><a href="/services/gmv-forge">GMV Forge</a><div class="slug">/services/gmv-forge</div></div>
-          <div class="item"><a href="/services/gmv-core">GMV Core</a><div class="slug">/services/gmv-core</div></div>
-          <div class="item"><a href="/services/gmv-chain">GMV Chain</a><div class="slug">/services/gmv-chain</div></div>
-          <div class="item"><a href="/services/gmv-cloudops">GMV CloudOps</a><div class="slug">/services/gmv-cloudops</div></div>
+          <div class="item"><a href="/services">Services Hub</a><div class="slug"><button class="copy" onclick="copySlug('/services')"><code>/services</code> Copy</button></div></div>
+          <div class="item"><a href="/services/gmv-studio">GMV Studio</a><div class="slug"><button class="copy" onclick="copySlug('/services/gmv-studio')"><code>/services/gmv-studio</code> Copy</button></div></div>
+          <div class="item"><a href="/services/gmv-forge">GMV Forge</a><div class="slug"><button class="copy" onclick="copySlug('/services/gmv-forge')"><code>/services/gmv-forge</code> Copy</button></div></div>
+          <div class="item"><a href="/services/gmv-core">GMV Core</a><div class="slug"><button class="copy" onclick="copySlug('/services/gmv-core')"><code>/services/gmv-core</code> Copy</button></div></div>
+          <div class="item"><a href="/services/gmv-chain">GMV Chain</a><div class="slug"><button class="copy" onclick="copySlug('/services/gmv-chain')"><code>/services/gmv-chain</code> Copy</button></div></div>
+          <div class="item"><a href="/services/gmv-cloudops">GMV CloudOps</a><div class="slug"><button class="copy" onclick="copySlug('/services/gmv-cloudops')"><code>/services/gmv-cloudops</code> Copy</button></div></div>
+        </div>
+        <details><summary>Suggested child pages</summary>
+          <ul>
+            <li><strong>Process</strong> — <code>/process</code></li>
+            <li><strong>Portfolio</strong> — <code>/portfolio</code></li>
+            <li><strong>Pricing</strong> — <code>/pricing</code></li>
+            <li><strong>FAQs</strong> — <code>/faqs</code></li>
+          </ul>
+        </details>
+      </section>
+
+      <section id="tech" class="card">
+        <h3>Tech Stack & Tooling</h3>
+        <div class="grid">
+          <div class="item"><a href="/tech">Tech Hub</a><div class="slug"><button class="copy" onclick="copySlug('/tech')"><code>/tech</code> Copy</button></div></div>
+          <div class="item"><a href="/tech/design">Design Tooling</a><div class="slug"><button class="copy" onclick="copySlug('/tech/design')"><code>/tech/design</code> Copy</button></div></div>
+          <div class="item"><a href="/tech/web-mobile">Web & Mobile</a><div class="slug"><button class="copy" onclick="copySlug('/tech/web-mobile')"><code>/tech/web-mobile</code> Copy</button></div></div>
+          <div class="item"><a href="/tech/enterprise">Enterprise</a><div class="slug"><button class="copy" onclick="copySlug('/tech/enterprise')"><code>/tech/enterprise</code> Copy</button></div></div>
+          <div class="item"><a href="/tech/blockchain">Blockchain</a><div class="slug"><button class="copy" onclick="copySlug('/tech/blockchain')"><code>/tech/blockchain</code> Copy</button></div></div>
+          <div class="item"><a href="/tech/cloud">Cloud & DevSecOps</a><div class="slug"><button class="copy" onclick="copySlug('/tech/cloud')"><code>/tech/cloud</code> Copy</button></div></div>
         </div>
       </section>
-      <section id="tech" class="section-card"><h3>Tech Stack & Tooling</h3>
+
+      <section id="tracks" class="card">
+        <h3>Guided Growth Tracks™</h3>
         <div class="grid">
-          <div class="item"><a href="/tech">Tech Hub</a><div class="slug">/tech</div></div>
-          <div class="item"><a href="/tech/design">Design Tooling</a><div class="slug">/tech/design</div></div>
-          <div class="item"><a href="/tech/web-mobile">Web & Mobile</a><div class="slug">/tech/web-mobile</div></div>
-          <div class="item"><a href="/tech/enterprise">Enterprise</a><div class="slug">/tech/enterprise</div></div>
-          <div class="item"><a href="/tech/blockchain">Blockchain</a><div class="slug">/tech/blockchain</div></div>
-          <div class="item"><a href="/tech/cloud">Cloud & DevSecOps</a><div class="slug">/tech/cloud</div></div>
+          <div class="item"><a href="/tracks">Tracks Hub</a><div class="slug"><button class="copy" onclick="copySlug('/tracks')"><code>/tracks</code> Copy</button></div></div>
+          <div class="item"><a href="/tracks/genesis">Genesis Track</a><div class="slug"><button class="copy" onclick="copySlug('/tracks/genesis')"><code>/tracks/genesis</code> Copy</button></div></div>
+          <div class="item"><a href="/tracks/momentum">Momentum Track</a><div class="slug"><button class="copy" onclick="copySlug('/tracks/momentum')"><code>/tracks/momentum</code> Copy</button></div></div>
+          <div class="item"><a href="/tracks/velocity">Velocity Track</a><div class="slug"><button class="copy" onclick="copySlug('/tracks/velocity')"><code>/tracks/velocity</code> Copy</button></div></div>
         </div>
       </section>
-      <section id="tracks" class="section-card"><h3>Guided Growth Tracks™</h3>
+
+      <section id="industries" class="card">
+        <h3>Industries</h3>
         <div class="grid">
-          <div class="item"><a href="/tracks">Tracks Hub</a><div class="slug">/tracks</div></div>
-          <div class="item"><a href="/tracks/genesis">Genesis Track</a><div class="slug">/tracks/genesis</div></div>
-          <div class="item"><a href="/tracks/momentum">Momentum Track</a><div class="slug">/tracks/momentum</div></div>
-          <div class="item"><a href="/tracks/velocity">Velocity Track</a><div class="slug">/tracks/velocity</div></div>
+          <div class="item"><a href="/industries">Industries Hub</a><div class="slug"><button class="copy" onclick="copySlug('/industries')"><code>/industries</code> Copy</button></div></div>
+          <div class="item"><a href="/industries/healthcare">Healthcare & Wellness</a><div class="slug"><button class="copy" onclick="copySlug('/industries/healthcare')"><code>/industries/healthcare</code> Copy</button></div></div>
+          <div class="item"><a href="/industries/retail-ecommerce">Retail & E‑commerce</a><div class="slug"><button class="copy" onclick="copySlug('/industries/retail-ecommerce')"><code>/industries/retail-ecommerce</code> Copy</button></div></div>
+          <div class="item"><a href="/industries/professional-services">Professional Services</a><div class="slug"><button class="copy" onclick="copySlug('/industries/professional-services')"><code>/industries/professional-services</code> Copy</button></div></div>
+          <div class="item"><a href="/industries/manufacturing-supply-chain">Manufacturing & Supply Chain</a><div class="slug"><button class="copy" onclick="copySlug('/industries/manufacturing-supply-chain')"><code>/industries/manufacturing-supply-chain</code> Copy</button></div></div>
+          <div class="item"><a href="/industries/fintech">FinTech & Digital Banking</a><div class="slug"><button class="copy" onclick="copySlug('/industries/fintech')"><code>/industries/fintech</code> Copy</button></div></div>
+          <div class="item"><a href="/industries/edtech">EdTech & Learning Platforms</a><div class="slug"><button class="copy" onclick="copySlug('/industries/edtech')"><code>/industries/edtech</code> Copy</button></div></div>
         </div>
       </section>
-      <section id="industries" class="section-card"><h3>Industries</h3>
+
+      <section id="impact" class="card">
+        <h3>Results & Impact</h3>
         <div class="grid">
-          <div class="item"><a href="/industries">Industries Hub</a><div class="slug">/industries</div></div>
-          <div class="item"><a href="/industries/healthcare">Healthcare & Wellness</a><div class="slug">/industries/healthcare</div></div>
-          <div class="item"><a href="/industries/retail-ecommerce">Retail & E-commerce</a><div class="slug">/industries/retail-ecommerce</div></div>
-          <div class="item"><a href="/industries/professional-services">Professional Services</a><div class="slug">/industries/professional-services</div></div>
-          <div class="item"><a href="/industries/manufacturing-supply-chain">Manufacturing & Supply Chain</a><div class="slug">/industries/manufacturing-supply-chain</div></div>
-          <div class="item"><a href="/industries/fintech">FinTech & Digital Banking</a><div class="slug">/industries/fintech</div></div>
-          <div class="item"><a href="/industries/edtech">EdTech & Learning Platforms</a><div class="slug">/industries/edtech</div></div>
+          <div class="item"><a href="/impact">Impact Overview</a><div class="slug"><button class="copy" onclick="copySlug('/impact')"><code>/impact</code> Copy</button></div></div>
+          <div class="item"><a href="/impact/metrics">Key Metrics</a><div class="slug"><button class="copy" onclick="copySlug('/impact/metrics')"><code>/impact/metrics</code> Copy</button></div></div>
+          <div class="item"><a href="/impact/roi-stories">ROI Stories</a><div class="slug"><button class="copy" onclick="copySlug('/impact/roi-stories')"><code>/impact/roi-stories</code> Copy</button></div></div>
         </div>
       </section>
-      <section id="impact" class="section-card"><h3>Results & Impact</h3>
+
+      <section id="work" class="card">
+        <h3>How We Work (Engagement Models)</h3>
         <div class="grid">
-          <div class="item"><a href="/impact">Impact Overview</a><div class="slug">/impact</div></div>
-          <div class="item"><a href="/impact/metrics">Key Metrics</a><div class="slug">/impact/metrics</div></div>
-          <div class="item"><a href="/impact/roi-stories">ROI Stories</a><div class="slug">/impact/roi-stories</div></div>
+          <div class="item"><a href="/how-we-work">Overview</a><div class="slug"><button class="copy" onclick="copySlug('/how-we-work')"><code>/how-we-work</code> Copy</button></div></div>
+          <div class="item"><a href="/how-we-work/elastic">Elastic Mode</a><div class="slug"><button class="copy" onclick="copySlug('/how-we-work/elastic')"><code>/how-we-work/elastic</code> Copy</button></div></div>
+          <div class="item"><a href="/how-we-work/milestone">Milestone Mode</a><div class="slug"><button class="copy" onclick="copySlug('/how-we-work/milestone')"><code>/how-we-work/milestone</code> Copy</button></div></div>
+          <div class="item"><a href="/how-we-work/coreteam">CoreTeam Mode</a><div class="slug"><button class="copy" onclick="copySlug('/how-we-work/coreteam')"><code>/how-we-work/coreteam</code> Copy</button></div></div>
         </div>
       </section>
-      <section id="work" class="section-card"><h3>How We Work (Engagement Models)</h3>
+
+      <section id="clients" class="card">
+        <h3>Our Clients</h3>
         <div class="grid">
-          <div class="item"><a href="/how-we-work">Overview</a><div class="slug">/how-we-work</div></div>
-          <div class="item"><a href="/how-we-work/elastic">Elastic Mode</a><div class="slug">/how-we-work/elastic</div></div>
-          <div class="item"><a href="/how-we-work/milestone">Milestone Mode</a><div class="slug">/how-we-work/milestone</div></div>
-          <div class="item"><a href="/how-we-work/coreteam">CoreTeam Mode</a><div class="slug">/how-we-work/coreteam</div></div>
+          <div class="item"><a href="/clients">Clients Overview</a><div class="slug"><button class="copy" onclick="copySlug('/clients')"><code>/clients</code> Copy</button></div></div>
+          <div class="item"><a href="/clients/spotlights">Client Spotlights</a><div class="slug"><button class="copy" onclick="copySlug('/clients/spotlights')"><code>/clients/spotlights</code> Copy</button></div></div>
         </div>
       </section>
-      <section id="clients" class="section-card"><h3>Our Clients</h3>
+
+      <section id="cases" class="card">
+        <h3>Case Studies</h3>
         <div class="grid">
-          <div class="item"><a href="/clients">Clients Overview</a><div class="slug">/clients</div></div>
-          <div class="item"><a href="/clients/spotlights">Client Spotlights</a><div class="slug">/clients/spotlights</div></div>
+          <div class="item"><a href="/case-studies">All Case Studies</a><div class="slug"><button class="copy" onclick="copySlug('/case-studies')"><code>/case-studies</code> Copy</button></div></div>
+          <div class="item"><a href="/case-studies/by-industry">By Industry</a><div class="slug"><button class="copy" onclick="copySlug('/case-studies/by-industry')"><code>/case-studies/by-industry</code> Copy</button></div></div>
+          <div class="item"><a href="/case-studies/by-stack">By Stack</a><div class="slug"><button class="copy" onclick="copySlug('/case-studies/by-stack')"><code>/case-studies/by-stack</code> Copy</button></div></div>
         </div>
       </section>
-      <section id="cases" class="section-card"><h3>Case Studies</h3>
+
+      <section id="testimonials" class="card">
+        <h3>Client Testimonials</h3>
         <div class="grid">
-          <div class="item"><a href="/case-studies">All Case Studies</a><div class="slug">/case-studies</div></div>
-          <div class="item"><a href="/case-studies/by-industry">By Industry</a><div class="slug">/case-studies/by-industry</div></div>
-          <div class="item"><a href="/case-studies/by-stack">By Stack</a><div class="slug">/case-studies/by-stack</div></div>
+          <div class="item"><a href="/testimonials">Testimonials</a><div class="slug"><button class="copy" onclick="copySlug('/testimonials')"><code>/testimonials</code> Copy</button></div></div>
+          <div class="item"><a href="/testimonials/videos">Video Testimonials</a><div class="slug"><button class="copy" onclick="copySlug('/testimonials/videos')"><code>/testimonials/videos</code> Copy</button></div></div>
         </div>
       </section>
-      <section id="testimonials" class="section-card"><h3>Client Testimonials</h3>
+
+      <section id="insights" class="card">
+        <h3>Latest Articles</h3>
         <div class="grid">
-          <div class="item"><a href="/testimonials">Testimonials</a><div class="slug">/testimonials</div></div>
-          <div class="item"><a href="/testimonials/videos">Video Testimonials</a><div class="slug">/testimonials/videos</div></div>
+          <div class="item"><a href="/insights">Blog & Insights</a><div class="slug"><button class="copy" onclick="copySlug('/insights')"><code>/insights</code> Copy</button></div></div>
+          <div class="item"><a href="/insights/guides">Guides</a><div class="slug"><button class="copy" onclick="copySlug('/insights/guides')"><code>/insights/guides</code> Copy</button></div></div>
+          <div class="item"><a href="/insights/news">GMV News</a><div class="slug"><button class="copy" onclick="copySlug('/insights/news')"><code>/insights/news</code> Copy</button></div></div>
         </div>
       </section>
-      <section id="insights" class="section-card"><h3>Latest Articles</h3>
+
+      <section id="faqs" class="card">
+        <h3>FAQs</h3>
         <div class="grid">
-          <div class="item"><a href="/insights">Blog & Insights</a><div class="slug">/insights</div></div>
-          <div class="item"><a href="/insights/guides">Guides</a><div class="slug">/insights/guides</div></div>
-          <div class="item"><a href="/insights/news">GMV News</a><div class="slug">/insights/news</div></div>
+          <div class="item"><a href="/faqs">FAQs</a><div class="slug"><button class="copy" onclick="copySlug('/faqs')"><code>/faqs</code> Copy</button></div></div>
+          <div class="item"><a href="/faqs/security">Security & Compliance</a><div class="slug"><button class="copy" onclick="copySlug('/faqs/security')"><code>/faqs/security</code> Copy</button></div></div>
+          <div class="item"><a href="/faqs/engagement">Engagement & Billing</a><div class="slug"><button class="copy" onclick="copySlug('/faqs/engagement')"><code>/faqs/engagement</code> Copy</button></div></div>
         </div>
       </section>
-      <section id="faqs" class="section-card"><h3>FAQs</h3>
+
+      <section id="contact" class="card">
+        <h3>Contact Us</h3>
         <div class="grid">
-          <div class="item"><a href="/faqs">FAQs</a><div class="slug">/faqs</div></div>
-          <div class="item"><a href="/faqs/security">Security & Compliance</a><div class="slug">/faqs/security</div></div>
-          <div class="item"><a href="/faqs/engagement">Engagement & Billing</a><div class="slug">/faqs/engagement</div></div>
+          <div class="item"><a href="/contact">Contact Form</a><div class="slug"><button class="copy" onclick="copySlug('/contact')"><code>/contact</code> Copy</button></div></div>
+          <div class="item"><a href="/contact/book-a-call">Book a Call</a><div class="slug"><button class="copy" onclick="copySlug('/contact/book-a-call')"><code>/contact/book-a-call</code> Copy</button></div></div>
+          <div class="item"><a href="/contact/locations">Locations</a><div class="slug"><button class="copy" onclick="copySlug('/contact/locations')"><code>/contact/locations</code> Copy</button></div></div>
         </div>
       </section>
-      <section id="contact" class="section-card"><h3>Contact Us</h3>
-        <div class="grid">
-          <div class="item"><a href="/contact">Contact Form</a><div class="slug">/contact</div></div>
-          <div class="item"><a href="/contact/book-a-call">Book a Call</a><div class="slug">/contact/book-a-call</div></div>
-          <div class="item"><a href="/contact/locations">Locations</a><div class="slug">/contact/locations</div></div>
-        </div>
-      </section>
-      <footer style="text-align:center;color:#98a2b3;padding:24px">© GMV Technologies — HTML Sitemap (Responsive)</footer>
+
+      <footer>© GMV Technologies — Site Map</footer>
     </main>
   </div>
 </body>
