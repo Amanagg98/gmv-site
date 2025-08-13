@@ -7,10 +7,6 @@
   <meta name="description" content="GMV Technologies accelerates ventures with product engineering, UI/UX, cloud & DevOps, enterprise platforms, and Web3.">
   <meta name="theme-color" content="#0B4C8A">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%230B4C8A'/%3E%3Ctext x='50' y='60' text-anchor='middle' font-family='system-ui' font-size='54' fill='%23fff'%3EG%3C/text%3E%3C/svg%3E">
-  <meta property="og:title" content="GMV Technologies">
-  <meta property="og:description" content="Build Stronger • Scale Smarter • Deliver Faster">
-  <meta property="og:type" content="website">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"GMV Technologies","url":"https://example.com","logo":"https://example.com/logo.png","description":"Product engineering, design, cloud & DevOps, enterprise and Web3."}</script>
   <style>
     :root{--blue:#0B4C8A;--cyan:#00C2FF;--emerald:#00B686;--gold:#FFD369;--char:#1C1C1C;--ivory:#FAFAFA;--cloud:#E5E5E5}
     *{box-sizing:border-box}
@@ -20,16 +16,16 @@
     .container{max-width:1200px;margin:0 auto;padding:0 24px}
     .grid{display:grid;gap:24px}
     .cols-2{grid-template-columns:1fr}
-    .cols-3{grid-template-columns:1fr}
-    @media(min-width:780px){.cols-2{grid-template-columns:1fr 1fr}}
-    @media(min-width:1024px){.cols-3{grid-template-columns:repeat(3,1fr)}}
+    @media(min-width:860px){.cols-2{grid-template-columns:1fr 1fr}}
 
+    /* Header */
     .header{position:sticky;top:0;z-index:50;background:#ffffffcc;backdrop-filter:saturate(1.1) blur(8px);border-bottom:1px solid #0001}
     .nav{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:12px 0}
     .brand{display:flex;align-items:center;gap:10px;color:var(--blue);font-weight:900}
     .brand svg{width:28px;height:28px}
     .header a.cta{background:var(--cyan);padding:10px 14px;border-radius:10px;color:#002;font-weight:800}
 
+    /* Hero */
     .hero{position:relative;overflow:hidden;color:#fff;padding:96px 0 56px}
     .hero .bg{position:absolute;inset:0;background:radial-gradient(1000px 520px at 20% -10%, #0b8ac8 0%, transparent 60%),linear-gradient(135deg,var(--blue),#0a2d4d);z-index:-2}
     .hero .gridOverlay{position:absolute;inset:0;opacity:.15;background-image:linear-gradient(0deg,transparent 24%,#fff2 25%,#fff2 26%,transparent 27%,transparent 74%,#fff2 75%,#fff2 76%,transparent 77%),linear-gradient(90deg,transparent 24%,#fff2 25%,#fff2 26%,transparent 27%,transparent 74%,#fff2 75%,#fff2 76%,transparent 77%);background-size:40px 40px;z-index:-1}
@@ -37,11 +33,9 @@
     .dot{width:8px;height:8px;border-radius:50%;background:var(--gold);display:inline-block}
     .h1{font-size:clamp(36px,6vw,64px);line-height:1.05;margin:14px 0 8px;font-weight:900}
     .p{max-width:680px;opacity:.95}
-    .pills{margin-top:10px}
     .pill{display:inline-block;border:1px solid #ffffff40;background:#ffffff20;border-radius:999px;padding:6px 10px;font-size:12px;color:#fff;margin:6px 6px 0 0}
     .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:12px;font-weight:800;transition:transform .2s ease,box-shadow .2s ease}
     .btn.primary{background:var(--cyan);color:#001;box-shadow:0 10px 20px #00c2ff2a}
-    .btn.ghost{border:1px solid #ffffff60;background:#ffffff20;color:#fff}
 
     .future-box{border:1px solid #ffffff33;background:#ffffff12;border-radius:16px;padding:22px}
     .gradient-title{font-size:clamp(26px,4.8vw,40px);line-height:1.08;margin:0 0 8px;font-weight:900;background:linear-gradient(90deg,#00C2FF,#0066FF);-webkit-background-clip:text;background-clip:text;color:transparent;letter-spacing:.02em}
@@ -56,64 +50,54 @@
     .marquee-track{display:inline-block;animation:marq 28s linear infinite}
     @keyframes marq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
-    .card{border:1px solid var(--cloud);background:#fff;border-radius:16px;padding:24px;transition:box-shadow .25s ease,transform .25s ease}
-    .card:hover{box-shadow:0 10px 22px rgba(0,0,0,.08);transform:translateY(-4px)}
-    .card h3{margin:0 0 6px;color:var(--blue);display:flex;align-items:center;gap:10px}
-    .list{list-style:none;margin:10px 0 0;padding:0}
-    .list li{margin:8px 0}
-
-    .tabs{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-bottom:20px}
-    .tab{padding:10px 14px;border-radius:999px;border:1px solid var(--cloud);background:#fff;font-weight:700;color:#444;cursor:pointer;display:inline-flex;align-items:center;gap:8px}
-    .tab.active{color:var(--blue);border-color:var(--blue)}
-    .count{min-width:22px;height:22px;border-radius:999px;background:#E5F7FF;color:var(--blue);display:inline-grid;place-items:center;font-size:12px;font-weight:800}
-    .logos{display:grid;gap:18px;grid-template-columns:repeat(3,1fr)}
-    @media(min-width:640px){.logos{grid-template-columns:repeat(4,1fr)}}
-    @media(min-width:1024px){.logos{grid-template-columns:repeat(6,1fr)}}
-    .logo{display:flex;flex-direction:column;align-items:center;gap:8px;padding:14px;border-radius:14px;background:#fff;border:1px solid var(--cloud);text-align:center}
-    .logo img{width:40px;height:40px}
-    .chips{display:grid;gap:14px;grid-template-columns:repeat(2,1fr)}
-    @media(min-width:640px){.chips{grid-template-columns:repeat(3,1fr)}}
-    @media(min-width:980px){.chips{grid-template-columns:repeat(6,1fr)}}
-    .chip{display:flex;align-items:center;gap:10px;padding:10px 12px;border:1px solid var(--cloud);border-radius:12px;background:#fff}
-    .chip img{width:20px;height:20px;opacity:.9}
-    @media(min-width:640px){.logos{grid-template-columns:repeat(4,1fr)}}
-    @media(min-width:1024px){.logos{grid-template-columns:repeat(6,1fr)}}
-    .logo{display:flex;flex-direction:column;align-items:center;gap:8px;padding:14px;border-radius:14px;background:#fff;border:1px solid var(--cloud);text-align:center}
-    .logo img{width:40px;height:40px}
-    .chips{display:grid;gap:14px;grid-template-columns:repeat(2,1fr)}
-    @media(min-width:640px){.chips{grid-template-columns:repeat(3,1fr)}}
-    @media(min-width:980px){.chips{grid-template-columns:repeat(6,1fr)}}
-    .chip{display:flex;align-items:center;gap:10px;padding:10px 12px;border:1px solid var(--cloud);border-radius:12px;background:#fff}
-    .chip img{width:20px;height:20px;opacity:.9}
-    @media(min-width:640px){.logos{grid-template-columns:repeat(4,1fr)}}
-    @media(min-width:1024px){.logos{grid-template-columns:repeat(6,1fr)}}
-    .logo{display:flex;flex-direction:column;align-items:center;gap:8px;padding:14px;border-radius:14px;background:#fff;border:1px solid var(--cloud);text-align:center}
-    .logo img{width:40px;height:40px}
-
-    .footer{border-top:1px solid var(--cloud);padding:32px 0;color:#555}
-    .center{text-align:center}
+    /* Section wrapper */
     .section{padding:80px 0}
-  
-    .chips{display:grid;gap:14px;grid-template-columns:repeat(2,1fr)}
-    @media(min-width:640px){.chips{grid-template-columns:repeat(3,1fr)}}
-    @media(min-width:980px){.chips{grid-template-columns:repeat(6,1fr)}}
-    .chip{display:flex;align-items:center;gap:10px;padding:10px 12px;border:1px solid var(--cloud);border-radius:12px;background:#fff}
-    .chip img{width:20px;height:20px;opacity:.9}
-  
-    .chips{display:grid;gap:14px;grid-template-columns:repeat(2,1fr)}
-    @media(min-width:640px){.chips{grid-template-columns:repeat(3,1fr)}}
-    @media(min-width:980px){.chips{grid-template-columns:repeat(6,1fr)}}
-    .chip{display:flex;align-items:center;gap:10px;padding:10px 12px;border:1px solid var(--cloud);border-radius:12px;background:#fff}
-    .chip img{width:20px;height:20px;opacity:.9}
-    .chips{display:grid;gap:14px;grid-template-columns:repeat(2,1fr)}
-    @media(min-width:640px){.chips{grid-template-columns:repeat(3,1fr)}}
-    @media(min-width:980px){.chips{grid-template-columns:repeat(6,1fr)}}
-    .chip{display:flex;align-items:center;gap:10px;padding:10px 12px;border:1px solid var(--cloud);border-radius:12px;background:#fff}
-    .chip img{width:20px;height:20px;opacity:.9}
+    .center{text-align:center}
 
+    /* Capabilities */
+    #cap-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}
+    .card{border:1px solid var(--cloud);background:#fff;border-radius:16px;padding:22px;transition:box-shadow .25s ease,transform .25s ease;display:flex;flex-direction:column;min-height:100%}
+    .card:hover{box-shadow:0 10px 22px rgba(0,0,0,.08);transform:translateY(-4px)}
+    .card h3{margin:0 0 6px;color:var(--blue);display:flex;align-items:center;gap:10px;font-size:18px;line-height:1.2}
+    .card .list{list-style:none;margin:10px 0 0;padding:0}
+    .card .list li{margin:8px 0}
+    .card .list{margin-top:auto}
+    .card h3 img{flex:0 0 20px;width:20px;height:20px}
+    @media(max-width:520px){.card{padding:18px}.card h3{font-size:16px}.card .list li{margin:6px 0}}
+
+    /* Tech Stack (category-first) */
+    .stack-grid{display:grid;gap:22px}
+    @media(min-width:960px){.stack-grid{grid-template-columns:repeat(2,1fr)}}
+    .stack-card{background:#fff;border:1px solid var(--cloud);border-radius:16px;padding:20px}
+    .stack-head{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+    .stack-icon{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;background:#F3FAFF;border:1px solid var(--cloud)}
+    .chips{display:flex;flex-wrap:wrap;gap:10px}
+    .chip{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border:1px solid var(--cloud);border-radius:999px;background:#fff;font-weight:600}
+    .chip img{width:16px;height:16px}
+
+    /* Contact */
+    .contact{background:#0B4C8A;color:#fff}
+    .contact-grid{display:grid;gap:28px}
+    @media(min-width:960px){.contact-grid{grid-template-columns:1fr 1fr}}
+    .contact form{background:#fff;color:#1C1C1C;border:1px solid var(--cloud);border-radius:14px;padding:18px;display:grid;gap:12px}
+    .fields{display:grid;gap:10px}
+    @media(min-width:680px){.fields{grid-template-columns:1fr 1fr}}
+    .input,.select,textarea{padding:12px;border:1px solid var(--cloud);border-radius:10px;width:100%}
+
+    /* Footer */
+    .footer{background:#0A1A27;color:#D7E0E7;padding:48px 0 28px}
+    .foot-grid{display:grid;gap:22px;grid-template-columns:repeat(2,1fr)}
+    @media(min-width:900px){.foot-grid{grid-template-columns:repeat(5,1fr)}}
+    .foot-list{list-style:none;margin:0;padding:0;display:grid;gap:8px;font-size:14px}
+    .offices{border-top:1px solid #1E3444;padding-top:18px;display:grid;gap:18px;grid-template-columns:1fr}
+    @media(min-width:900px){.offices{grid-template-columns:repeat(3,1fr)}}
+    .foot-bottom{border-top:1px solid #1E3444;padding-top:16px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:#9FB0BC;font-size:12px}
+    .social{display:flex;gap:10px;margin-top:6px}
+    .social span{width:28px;height:28px;border:1px solid #284055;border-radius:8px;display:grid;place-items:center}
   </style>
 </head>
 <body>
+  <!-- Header -->
   <header class="header" aria-label="Site header">
     <div class="container nav">
       <a class="brand" href="#" aria-label="GMV Technologies home">
@@ -128,6 +112,7 @@
     </div>
   </header>
 
+  <!-- HERO -->
   <section class="hero" aria-labelledby="hero-title">
     <div class="bg"></div><div class="gridOverlay"></div>
     <div class="container">
@@ -137,18 +122,18 @@
           <h1 id="hero-title" class="h1">We accelerate your product from idea → impact.</h1>
           <p class="p" id="hero-sub">GMV Technologies partners with startups and enterprises to ship scalable platforms, elevate experience design, and modernize cloud infrastructure—fast and reliably.</p>
           <div style="margin-top:18px" id="hero-ctas">
-          <a href="#contact" class="btn primary" aria-label="Start a project">Start a Project</a>
+            <a href="#contact" class="btn primary" aria-label="Start a project">Start a Project</a>
           </div>
-          <div class="pills" aria-hidden="true" id="hero-pills">
+          <div aria-hidden="true" style="margin-top:8px">
             <span class="pill">Product Engineering</span>
             <span class="pill">UI/UX</span>
             <span class="pill">Cloud & DevOps</span>
             <span class="pill">Web3</span>
           </div>
           <div class="grid" style="grid-template-columns:repeat(3,1fr);gap:12px;max-width:540px;margin-top:18px" id="hero-stats">
-            <div class="stat"><div style="font-size:28px;font-weight:800">50+</div><div style="font-size:12px;opacity:.85">Products shipped</div></div>
-            <div class="stat"><div style="font-size:28px;font-weight:800">&lt;12w</div><div style="font-size:12px;opacity:.85">Avg time‑to‑MVP</div></div>
-            <div class="stat"><div style="font-size:28px;font-weight:800">NPS 70</div><div style="font-size:12px;opacity:.85">Client satisfaction</div></div>
+            <div class="card" style="background:#ffffff16;border-color:#ffffff33;text-align:center"><div style="font-size:28px;font-weight:800;color:#fff">50+</div><div style="font-size:12px;opacity:.85;color:#fff">Products shipped</div></div>
+            <div class="card" style="background:#ffffff16;border-color:#ffffff33;text-align:center"><div style="font-size:28px;font-weight:800;color:#fff">&lt;12w</div><div style="font-size:12px;opacity:.85;color:#fff">Avg time‑to‑MVP</div></div>
+            <div class="card" style="background:#ffffff16;border-color:#ffffff33;text-align:center"><div style="font-size:28px;font-weight:800;color:#fff">NPS 70</div><div style="font-size:12px;opacity:.85;color:#fff">Client satisfaction</div></div>
           </div>
         </div>
         <div>
@@ -161,213 +146,216 @@
               <li><span class="chk" aria-hidden="true"></span><span>Outcome‑driven sprints</span></li>
             </ul>
           </div>
-          </div>
         </div>
       </div>
 
+      <!-- Clients marquee with clean placeholders -->
       <div class="marquee" aria-label="Trusted by clients">
         <div class="marquee-track">
-        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='40'><rect width='140' height='40' fill='%23f2f2f2'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-family='system-ui' font-size='16' fill='%23999'>ACME</text></svg>" alt="Client ACME" style="margin:0 28px;display:inline-block;opacity:.9">
-        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='40'><rect width='140' height='40' fill='%23f2f2f2'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-family='system-ui' font-size='16' fill='%23999'>GLOBEX</text></svg>" alt="Client GLOBEX" style="margin:0 28px;display:inline-block;opacity:.9">
-        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='40'><rect width='140' height='40' fill='%23f2f2f2'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-family='system-ui' font-size='16' fill='%23999'>OMEGA</text></svg>" alt="Client OMEGA" style="margin:0 28px;display:inline-block;opacity:.9">
-        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='40'><rect width='140' height='40' fill='%23f2f2f2'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-family='system-ui' font-size='16' fill='%23999'>NIMBUS</text></svg>" alt="Client NIMBUS" style="margin:0 28px;display:inline-block;opacity:.9">
-        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='40'><rect width='140' height='40' fill='%23f2f2f2'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-family='system-ui' font-size='16' fill='%23999'>AURORA</text></svg>" alt="Client AURORA" style="margin:0 28px;display:inline-block;opacity:.9">
-        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='40'><rect width='140' height='40' fill='%23f2f2f2'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-family='system-ui' font-size='16' fill='%23999'>ZENITH</text></svg>" alt="Client ZENITH" style="margin:0 28px;display:inline-block;opacity:.9">
-        <!-- duplicate for seamless loop -->
-        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='40'><rect width='140' height='40' fill='%23f2f2f2'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-family='system-ui' font-size='16' fill='%23999'>ACME</text></svg>" alt="Client ACME" style="margin:0 28px;display:inline-block;opacity:.9">
-        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='40'><rect width='140' height='40' fill='%23f2f2f2'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-family='system-ui' font-size='16' fill='%23999'>GLOBEX</text></svg>" alt="Client GLOBEX" style="margin:0 28px;display:inline-block;opacity:.9">
-        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='40'><rect width='140' height='40' fill='%23f2f2f2'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-family='system-ui' font-size='16' fill='%23999'>OMEGA</text></svg>" alt="Client OMEGA" style="margin:0 28px;display:inline-block;opacity:.9">
-        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='40'><rect width='140' height='40' fill='%23f2f2f2'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-family='system-ui' font-size='16' fill='%23999'>NIMBUS</text></svg>" alt="Client NIMBUS" style="margin:0 28px;display:inline-block;opacity:.9">
-        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='40'><rect width='140' height='40' fill='%23f2f2f2'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-family='system-ui' font-size='16' fill='%23999'>AURORA</text></svg>" alt="Client AURORA" style="margin:0 28px;display:inline-block;opacity:.9">
-        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='40'><rect width='140' height='40' fill='%23f2f2f2'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-family='system-ui' font-size='16' fill='%23999'>ZENITH</text></svg>" alt="Client ZENITH" style="margin:0 28px;display:inline-block;opacity:.9">
-      </div>
+          <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='40'><rect width='140' height='40' fill='%23f2f2f2'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-family='system-ui' font-size='16' fill='%23999'>ACME</text></svg>" alt="Client ACME" style="margin:0 28px;display:inline-block;opacity:.9">
+          <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='40'><rect width='140' height='40' fill='%23f2f2f2'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-family='system-ui' font-size='16' fill='%23999'>GLOBEX</text></svg>" alt="Client GLOBEX" style="margin:0 28px;display:inline-block;opacity:.9">
+          <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='40'><rect width='140' height='40' fill='%23f2f2f2'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-family='system-ui' font-size='16' fill='%23999'>OMEGA</text></svg>" alt="Client OMEGA" style="margin:0 28px;display:inline-block;opacity:.9">
+          <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='40'><rect width='140' height='40' fill='%23f2f2f2'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-family='system-ui' font-size='16' fill='%23999'>NIMBUS</text></svg>" alt="Client NIMBUS" style="margin:0 28px;display:inline-block;opacity:.9">
+          <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='40'><rect width='140' height='40' fill='%23f2f2f2'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-family='system-ui' font-size='16' fill='%23999'>AURORA</text></svg>" alt="Client AURORA" style="margin:0 28px;display:inline-block;opacity:.9">
+          <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='40'><rect width='140' height='40' fill='%23f2f2f2'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-family='system-ui' font-size='16' fill='%23999'>ZENITH</text></svg>" alt="Client ZENITH" style="margin:0 28px;display:inline-block;opacity:.9">
+          <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='40'><rect width='140' height='40' fill='%23f2f2f2'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-family='system-ui' font-size='16' fill='%23999'>ACME</text></svg>" alt="Client ACME" style="margin:0 28px;display:inline-block;opacity:.9">
+          <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='40'><rect width='140' height='40' fill='%23f2f2f2'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-family='system-ui' font-size='16' fill='%23999'>GLOBEX</text></svg>" alt="Client GLOBEX" style="margin:0 28px;display:inline-block;opacity:.9">
+          <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='40'><rect width='140' height='40' fill='%23f2f2f2'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-family='system-ui' font-size='16' fill='%23999'>OMEGA</text></svg>" alt="Client OMEGA" style="margin:0 28px;display:inline-block;opacity:.9">
+          <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='40'><rect width='140' height='40' fill='%23f2f2f2'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-family='system-ui' font-size='16' fill='%23999'>NIMBUS</text></svg>" alt="Client NIMBUS" style="margin:0 28px;display:inline-block;opacity:.9">
+          <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='40'><rect width='140' height='40' fill='%23f2f2f2'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-family='system-ui' font-size='16' fill='%23999'>AURORA</text></svg>" alt="Client AURORA" style="margin:0 28px;display:inline-block;opacity:.9">
+          <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='40'><rect width='140' height='40' fill='%23f2f2f2'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-family='system-ui' font-size='16' fill='%23999'>ZENITH</text></svg>" alt="Client ZENITH" style="margin:0 28px;display:inline-block;opacity:.9">
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- SECTION 2: Capabilities -->
   <section id="capabilities" class="section" aria-labelledby="cap-title">
     <div class="container">
       <h2 id="cap-title" class="center" style="color:var(--blue);font-size:32px;font-weight:900;margin:0">Our Capabilities</h2>
       <p class="center" style="max-width:680px;margin:8px auto 28px;font-weight:600">Engineering Innovation Through Specialized Divisions</p>
-      <div class="grid cols-3" id="cap-grid">
-        <article class="card" aria-label="GMV Studio">
-          <h3><img src="https://cdn.simpleicons.org/figma" alt="" width="20" height="20"> GMV Studio</h3>
-          <p>Design-first thinking meets usability, UX research, and digital creativity.</p>
-          <p style="font-size:12px;color:#666;font-weight:700;letter-spacing:.05em;margin:.6rem 0 0">Focus Areas</p>
-          <ul class="list">
-            <li>UI/UX Design →</li>
-            <li>Product Strategy & Wireframing →</li>
-            <li>Interaction Design (IXD) →</li>
-            <li>Design Systems & Prototyping →</li>
-          </ul>
-        </article>
-        <article class="card" aria-label="GMV Forge">
-          <h3><img src="https://cdn.simpleicons.org/react" alt="" width="20" height="20"> GMV Forge</h3>
-          <p>Robust web & mobile development built for scale and speed.</p>
-          <p style="font-size:12px;color:#666;font-weight:700;letter-spacing:.05em;margin:.6rem 0 0">Focus Areas</p>
-          <ul class="list">
-            <li>Web Application Development →</li>
-            <li>Mobile App Development →</li>
-            <li>MVP & Rapid Prototyping →</li>
-            <li>QA & Test Engineering →</li>
-          </ul>
-        </article>
-        <article class="card" aria-label="GMV Core">
-          <h3><img src="https://cdn.simpleicons.org/sap/008FD3" alt="" width="20" height="20"> GMV Core</h3>
-          <p>Enterprise-grade implementation of SAP S/4HANA, Salesforce, ServiceNow, and HRIS systems.</p>
-          <p style="font-size:12px;color:#666;font-weight:700;letter-spacing:.05em;margin:.6rem 0 0">Focus Areas</p>
-          <ul class="list">
-            <li>S/4HANA Implementation →</li>
-            <li>Salesforce Development →</li>
-            <li>Information Security →</li>
-            <li>HRIS Systems →</li>
-            <li>Automation (RPA) + AI →</li>
-          </ul>
-        </article>
-        <article class="card" aria-label="GMV Chain">
-          <h3><img src="https://cdn.simpleicons.org/ethereum/3C3C3D" alt="" width="20" height="20"> GMV Chain</h3>
-          <p>Blockchain consulting, smart contracts, and next-gen Web3 solutions.</p>
-          <p style="font-size:12px;color:#666;font-weight:700;letter-spacing:.05em;margin:.6rem 0 0">Focus Areas</p>
-          <ul class="list">
-            <li>Blockchain Architecture & DApps →</li>
-            <li>Smart Contract Development →</li>
-            <li>Tokenization Strategy →</li>
-            <li>Web3 Integrations →</li>
-          </ul>
-        </article>
-        <article class="card" aria-label="GMV CloudOps">
-          <h3><img src="https://cdn.simpleicons.org/kubernetes/326CE5" alt="" width="20" height="20"> GMV CloudOps</h3>
-          <p>Cloud engineering, infrastructure, and DevSecOps tailored to modern enterprises.</p>
-          <p style="font-size:12px;color:#666;font-weight:700;letter-spacing:.05em;margin:.6rem 0 0">Focus Areas</p>
-          <ul class="list">
-            <li>Cloud Consulting & Migration →</li>
-            <li>CI/CD & DevOps Automation →</li>
-            <li>Cloud Security & Compliance →</li>
-            <li>Infra-as-Code & Monitoring →</li>
-          </ul>
-        </article>
+      <div id="cap-grid">
+        <article class="card"><h3><img src="https://cdn.simpleicons.org/figma" alt="" width="20" height="20"> GMV Studio</h3><p>Design-first thinking meets usability, UX research, and digital creativity.</p><p style="font-size:12px;color:#666;font-weight:700;letter-spacing:.05em;margin:.6rem 0 0">Focus Areas</p><ul class="list"><li>UI/UX Design →</li><li>Product Strategy & Wireframing →</li><li>Interaction Design (IXD) →</li><li>Design Systems & Prototyping →</li></ul></article>
+        <article class="card"><h3><img src="https://cdn.simpleicons.org/react" alt="" width="20" height="20"> GMV Forge</h3><p>Robust web & mobile development built for scale and speed.</p><p style="font-size:12px;color:#666;font-weight:700;letter-spacing:.05em;margin:.6rem 0 0">Focus Areas</p><ul class="list"><li>Web Application Development →</li><li>Mobile App Development →</li><li>MVP & Rapid Prototyping →</li><li>QA & Test Engineering →</li></ul></article>
+        <article class="card"><h3><img src="https://cdn.simpleicons.org/sap/008FD3" alt="" width="20" height="20"> GMV Core</h3><p>Enterprise-grade implementation of SAP S/4HANA, Salesforce, ServiceNow, and HRIS systems.</p><p style="font-size:12px;color:#666;font-weight:700;letter-spacing:.05em;margin:.6rem 0 0">Focus Areas</p><ul class="list"><li>S/4HANA Implementation →</li><li>Salesforce Development →</li><li>Information Security →</li><li>HRIS Systems →</li><li>Automation (RPA) + AI →</li></ul></article>
+        <article class="card"><h3><img src="https://cdn.simpleicons.org/ethereum/3C3C3D" alt="" width="20" height="20"> GMV Chain</h3><p>Blockchain consulting, smart contracts, and next-gen Web3 solutions.</p><p style="font-size:12px;color:#666;font-weight:700;letter-spacing:.05em;margin:.6rem 0 0">Focus Areas</p><ul class="list"><li>Blockchain Architecture & DApps →</li><li>Smart Contract Development →</li><li>Tokenization Strategy →</li><li>Web3 Integrations →</li></ul></article>
+        <article class="card"><h3><img src="https://cdn.simpleicons.org/kubernetes/326CE5" alt="" width="20" height="20"> GMV CloudOps</h3><p>Cloud engineering, infrastructure, and DevSecOps tailored to modern enterprises.</p><p style="font-size:12px;color:#666;font-weight:700;letter-spacing:.05em;margin:.6rem 0 0">Focus Areas</p><ul class="list"><li>Cloud Consulting & Migration →</li><li>CI/CD & DevOps Automation →</li><li>Cloud Security & Compliance →</li><li>Infra-as-Code & Monitoring →</li></ul></article>
       </div>
     </div>
   </section>
 
-  <section id="stack" class="section" style="position:relative" aria-labelledby="stack-title">
+  <!-- SECTION 3: Technology Stack (Category-first chips) -->
+  <section id="stack" class="section" aria-labelledby="stack-title">
     <div class="container">
       <div class="center" style="margin-bottom:18px">
         <span style="display:inline-block;border:1px solid var(--cloud);background:#fff;padding:6px 14px;border-radius:999px;font-size:12px;color:#666">OUR TECH STACK</span>
-        <h2 id="stack-title" tabindex="-1" style="margin:10px 0 0 0;color:var(--blue);font-size:32px;font-weight:900">Technologies we work on</h2>
+        <h2 id="stack-title" style="margin:10px 0 0 0;color:var(--blue);font-size:32px;font-weight:900">Technologies we work on</h2>
       </div>
-
-      <div class="tabs" id="tabs" role="tablist">
-        <button class="tab active" id="tab-design" role="tab" aria-selected="true" aria-controls="panel-design" data-tab="design">Design <span class="count">0</span></button>
-        <button class="tab" id="tab-web" role="tab" aria-selected="false" aria-controls="panel-web" data-tab="web">Web & Mobile <span class="count">0</span></button>
-        <button class="tab" id="tab-ent" role="tab" aria-selected="false" aria-controls="panel-ent" data-tab="ent">Enterprise <span class="count">0</span></button>
-        <button class="tab" id="tab-chain" role="tab" aria-selected="false" aria-controls="panel-chain" data-tab="chain">Blockchain <span class="count">0</span></button>
-        <button class="tab" id="tab-cloud" role="tab" aria-selected="false" aria-controls="panel-cloud" data-tab="cloud">Cloud & DevOps <span class="count">0</span></button>
-      </div>
-
-      <div class="panel" id="panel-design" data-panel="design" role="tabpanel" aria-labelledby="tab-design">
-        <div class="chips" id="chips-design">
-          <span class="chip"><img src="https://cdn.simpleicons.org/figma" alt="">Figma</span>
-          <span class="chip"><img src="https://cdn.simpleicons.org/storybook" alt="">Storybook</span>
-          <span class="chip"><img src="https://cdn.simpleicons.org/lottiefiles/00D9FF" alt="">LottieFiles</span>
-          <span class="chip"><img src="https://cdn.simpleicons.org/adobexd" alt="">Adobe XD</span>
-          <span class="chip"><img src="https://cdn.simpleicons.org/sketch" alt="">Sketch</span>
-          <span class="chip"><img src="https://cdn.simpleicons.org/figma" alt="">Design Systems</span>
-        </div>
-      </div>
-
-      <div class="panel" id="panel-web" data-panel="web" role="tabpanel" aria-labelledby="tab-web" hidden>
-        <div class="chips" id="chips-web">
-          <span class="chip"><img src="https://cdn.simpleicons.org/react" alt="">React</span>
-          <span class="chip"><img src="https://cdn.simpleicons.org/nextdotjs/000000" alt="">Next.js</span>
-          <span class="chip"><img src="https://cdn.simpleicons.org/typescript/3178C6" alt="">TypeScript</span>
-          <span class="chip"><img src="https://cdn.simpleicons.org/tailwindcss/06B6D4" alt="">Tailwind</span>
-          <span class="chip"><img src="https://cdn.simpleicons.org/nodedotjs/339933" alt="">Node.js</span>
-          <span class="chip"><img src="https://cdn.simpleicons.org/fastapi/009688" alt="">FastAPI</span>
-          <span class="chip"><img src="https://cdn.simpleicons.org/spring/6DB33F" alt="">Spring Boot</span>
-          <span class="chip"><img src="https://cdn.simpleicons.org/flutter/02569B" alt="">Flutter</span>
-          <span class="chip"><img src="https://cdn.simpleicons.org/postgresql/4169E1" alt="">PostgreSQL</span>
-          <span class="chip"><img src="https://cdn.simpleicons.org/redis/DC382D" alt="">Redis</span>
-        </div>
-      </div>
-
-      <div class="panel" id="panel-ent" data-panel="ent" role="tabpanel" aria-labelledby="tab-ent" hidden>
-        <div class="chips" id="chips-ent">
-          <span class="chip"><img src="https://cdn.simpleicons.org/sap/008FD3" alt="">SAP S/4HANA</span>
-          <span class="chip"><img src="https://cdn.simpleicons.org/salesforce/00A1E0" alt="">Salesforce</span>
-          <span class="chip"><img src="https://cdn.simpleicons.org/servicenow/90B917" alt="">ServiceNow</span>
-          <span class="chip"><img src="https://cdn.simpleicons.org/mulesoft/00A1E0" alt="">MuleSoft</span>
-          <span class="chip"><img src="https://cdn.simpleicons.org/powerautomate/0066FF" alt="">Power Automate</span>
-          <span class="chip"><img src="https://cdn.simpleicons.org/okta/007DC1" alt="">Okta</span>
-        </div>
-      </div>
-
-      <div class="panel" id="panel-chain" data-panel="chain" role="tabpanel" aria-labelledby="tab-chain" hidden>
-        <div class="chips" id="chips-chain">
-          <span class="chip"><img src="https://cdn.simpleicons.org/ethereum/3C3C3D" alt="">Ethereum</span>
-          <span class="chip"><img src="https://cdn.simpleicons.org/polygon/8247E5" alt="">Polygon</span>
-          <span class="chip"><img src="https://cdn.simpleicons.org/solidity" alt="">Solidity</span>
-          <span class="chip"><img src="https://cdn.simpleicons.org/hardhat/FCC000" alt="">Hardhat</span>
-          <span class="chip"><img src="https://cdn.simpleicons.org/walletconnect/3B99FC" alt="">WalletConnect</span>
-          <span class="chip"><img src="https://cdn.simpleicons.org/ipfs/65C2CB" alt="">IPFS</span>
-        </div>
-      </div>
-
-      <div class="panel" id="panel-cloud" data-panel="cloud" role="tabpanel" aria-labelledby="tab-cloud" hidden>
-        <div class="chips" id="chips-cloud">
-          <span class="chip"><img src="https://cdn.simpleicons.org/amazonaws/232F3E" alt="">AWS</span>
-          <span class="chip"><img src="https://cdn.simpleicons.org/microsoftazure/0078D4" alt="">Azure</span>
-          <span class="chip"><img src="https://cdn.simpleicons.org/googlecloud/4285F4" alt="">GCP</span>
-          <span class="chip"><img src="https://cdn.simpleicons.org/docker/2496ED" alt="">Docker</span>
-          <span class="chip"><img src="https://cdn.simpleicons.org/kubernetes/326CE5" alt="">Kubernetes</span>
-          <span class="chip"><img src="https://cdn.simpleicons.org/terraform/844FBA" alt="">Terraform</span>
-          <span class="chip"><img src="https://cdn.simpleicons.org/jenkins/D24939" alt="">Jenkins</span>
-          <span class="chip"><img src="https://cdn.simpleicons.org/githubactions/2088FF" alt="">GitHub Actions</span>
-        </div>
+      <div class="stack-grid" id="stack-grid">
+        <article class="stack-card">
+          <div class="stack-head"><div class="stack-icon"><img src="https://cdn.simpleicons.org/figma" alt="" width="20" height="20"></div><h3 style="margin:0;color:var(--blue)">Design</h3></div>
+          <div class="chips">
+            <span class="chip"><img src="https://cdn.simpleicons.org/figma" alt="">Figma</span>
+            <span class="chip"><img src="https://cdn.simpleicons.org/storybook" alt="">Storybook</span>
+            <span class="chip"><img src="https://cdn.simpleicons.org/lottiefiles/00D9FF" alt="">LottieFiles</span>
+            <span class="chip"><img src="https://cdn.simpleicons.org/adobexd" alt="">Adobe XD</span>
+            <span class="chip"><img src="https://cdn.simpleicons.org/sketch" alt="">Sketch</span>
+          </div>
+        </article>
+        <article class="stack-card">
+          <div class="stack-head"><div class="stack-icon"><img src="https://cdn.simpleicons.org/react" alt="" width="20" height="20"></div><h3 style="margin:0;color:var(--blue)">Web & Mobile</h3></div>
+          <div class="chips">
+            <span class="chip"><img src="https://cdn.simpleicons.org/react" alt="">React</span>
+            <span class="chip"><img src="https://cdn.simpleicons.org/nextdotjs/000000" alt="">Next.js</span>
+            <span class="chip"><img src="https://cdn.simpleicons.org/typescript/3178C6" alt="">TypeScript</span>
+            <span class="chip"><img src="https://cdn.simpleicons.org/tailwindcss/06B6D4" alt="">Tailwind</span>
+            <span class="chip"><img src="https://cdn.simpleicons.org/angular/DD0031" alt="">Angular</span>
+            <span class="chip"><img src="https://cdn.simpleicons.org/flutter/02569B" alt="">Flutter</span>
+          </div>
+        </article>
+        <article class="stack-card">
+          <div class="stack-head"><div class="stack-icon"><img src="https://cdn.simpleicons.org/spring/6DB33F" alt="" width="20" height="20"></div><h3 style="margin:0;color:var(--blue)">Backend & APIs</h3></div>
+          <div class="chips">
+            <span class="chip"><img src="https://cdn.simpleicons.org/nodedotjs/339933" alt="">Node.js</span>
+            <span class="chip"><img src="https://cdn.simpleicons.org/fastapi/009688" alt="">FastAPI</span>
+            <span class="chip"><img src="https://cdn.simpleicons.org/spring/6DB33F" alt="">Spring Boot</span>
+            <span class="chip"><img src="https://cdn.simpleicons.org/python/3776AB" alt="">Python</span>
+            <span class="chip"><img src="https://cdn.simpleicons.org/postgresql/4169E1" alt="">PostgreSQL</span>
+          </div>
+        </article>
+        <article class="stack-card">
+          <div class="stack-head"><div class="stack-icon"><img src="https://cdn.simpleicons.org/amazonaws/232F3E" alt="" width="20" height="20"></div><h3 style="margin:0;color:var(--blue)">Cloud & DevOps</h3></div>
+          <div class="chips">
+            <span class="chip"><img src="https://cdn.simpleicons.org/amazonaws/232F3E" alt="">AWS</span>
+            <span class="chip"><img src="https://cdn.simpleicons.org/microsoftazure/0078D4" alt="">Azure</span>
+            <span class="chip"><img src="https://cdn.simpleicons.org/googlecloud/4285F4" alt="">GCP</span>
+            <span class="chip"><img src="https://cdn.simpleicons.org/docker/2496ED" alt="">Docker</span>
+            <span class="chip"><img src="https://cdn.simpleicons.org/kubernetes/326CE5" alt="">Kubernetes</span>
+            <span class="chip"><img src="https://cdn.simpleicons.org/terraform/844FBA" alt="">Terraform</span>
+          </div>
+        </article>
+        <article class="stack-card">
+          <div class="stack-head"><div class="stack-icon"><img src="https://cdn.simpleicons.org/sap/008FD3" alt="" width="20" height="20"></div><h3 style="margin:0;color:var(--blue)">Enterprise Platforms</h3></div>
+          <div class="chips">
+            <span class="chip"><img src="https://cdn.simpleicons.org/sap/008FD3" alt="">SAP</span>
+            <span class="chip"><img src="https://cdn.simpleicons.org/salesforce/00A1E0" alt="">Salesforce</span>
+            <span class="chip"><img src="https://cdn.simpleicons.org/servicenow/90B917" alt="">ServiceNow</span>
+          </div>
+        </article>
+        <article class="stack-card">
+          <div class="stack-head"><div class="stack-icon"><img src="https://cdn.simpleicons.org/ethereum/3C3C3D" alt="" width="20" height="20"></div><h3 style="margin:0;color:var(--blue)">Web3 & Blockchain</h3></div>
+          <div class="chips">
+            <span class="chip"><img src="https://cdn.simpleicons.org/ethereum/3C3C3D" alt="">Ethereum</span>
+            <span class="chip"><img src="https://cdn.simpleicons.org/polygon/8247E5" alt="">Polygon</span>
+            <span class="chip"><img src="https://cdn.simpleicons.org/solidity" alt="">Solidity</span>
+            <span class="chip"><img src="https://cdn.simpleicons.org/hardhat/FCC000" alt="">Hardhat</span>
+          </div>
+        </article>
       </div>
     </div>
   </section>
 
-  <section id="contact" class="section footer" aria-label="Contact">
+  <!-- CONTACT -->
+  <section id="contact" class="section contact" aria-label="Contact">
+    <div class="container contact-grid">
+      <div>
+        <h2 style="margin:0 0 6px;font-weight:900;font-size:clamp(22px,3.2vw,30px)">New project in mind? Let’s talk!</h2>
+        <p style="margin:0 0 14px;opacity:.9">Response in less than 1 working hour.</p>
+        <div style="display:grid;gap:10px;margin-top:10px;font-size:14px">
+          <div>US: <a href="tel:+14158432289" style="color:#FAFAFA;text-decoration:underline">+1 (415) 843‑2289</a></div>
+          <div>UK: <a href="tel:+447476563437" style="color:#FAFAFA;text-decoration:underline">+44 7476 563 437</a></div>
+          <div>PT: <a href="tel:+351213860577" style="color:#FAFAFA;text-decoration:underline">+351 21 386 0577</a></div>
+          <div>Email: <a href="mailto:hello@gmv.example" style="color:#FAFAFA;text-decoration:underline">hello@gmv.example</a></div>
+        </div>
+      </div>
+      <form action="#" method="post">
+        <h3 style="margin:0 0 6px;color:var(--blue)">Explain your project and book a call</h3>
+        <div class="fields">
+          <input class="input" required name="name" placeholder="Name*">
+          <input class="input" name="company" placeholder="Company">
+          <input class="input" required type="email" name="email" placeholder="Email*">
+          <input class="input" name="phone" placeholder="Phone">
+          <select class="select" name="looking" style="grid-column:1/-1">
+            <option value="">I am looking for…</option>
+            <option>UI/UX Design</option>
+            <option>Web or Mobile App</option>
+            <option>Cloud & DevOps</option>
+            <option>Enterprise Platforms (SAP/SF/ServiceNow)</option>
+            <option>Blockchain / Web3</option>
+          </select>
+          <textarea class="input" name="message" rows="5" placeholder="Message" style="grid-column:1/-1"></textarea>
+        </div>
+        <label style="display:flex;gap:8px;align-items:center;font-size:13px"><input type="checkbox" required> I allow GMV Technologies to store and process my personal data.</label>
+        <button type="submit" class="btn primary" style="align-self:start;background:var(--cyan);color:#001">Submit &amp; Book</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
     <div class="container">
-      <h3 style="margin-top:0;color:var(--blue)">Start a Project</h3>
-      <p>Tell us about your goals—engineering, product design, or cloud scale—and we’ll get in touch.</p>
-      <p style="font-size:12px;color:#777">© <span id="year"></span> GMV Technologies</p>
+      <div class="foot-grid">
+        <div>
+          <h4 style="margin:0 0 10px;color:#FAFAFA">Services</h4>
+          <ul class="foot-list">
+            <li>Digital Transformation</li>
+            <li>Product Design</li>
+            <li>MVP Development</li>
+            <li>Web & Mobile Development</li>
+            <li>Quality Assurance</li>
+            <li>Cloud & DevOps</li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="margin:0 0 10px;color:#FAFAFA">Industries</h4>
+          <ul class="foot-list"><li>Fintech</li><li>HealthTech</li><li>Manufacturing</li><li>Retail</li><li>Green Tech</li><li>All industries</li></ul>
+        </div>
+        <div>
+          <h4 style="margin:0 0 10px;color:#FAFAFA">Company</h4>
+          <ul class="foot-list"><li>About us</li><li>Why us</li><li>Case studies</li><li>Careers</li></ul>
+        </div>
+        <div>
+          <h4 style="margin:0 0 10px;color:#FAFAFA">Top reads</h4>
+          <ul class="foot-list"><li>The best tech stack for web development</li><li>Should your project have project management?</li><li>How to manage technical debt?</li><li><a href="#" style="color:#00C2FF">Read all blog posts</a></li></ul>
+        </div>
+        <div>
+          <h4 style="margin:0 0 10px;color:#FAFAFA">Contact us</h4>
+          <div style="display:grid;gap:8px;font-size:14px">
+            <a href="mailto:hello@gmv.example" style="color:#D7E0E7">hello@gmv.example</a>
+            <a href="tel:+14158432289" style="color:#D7E0E7">+1 (415) 843‑2289</a>
+            <a href="tel:+447476563437" style="color:#D7E0E7">+44 7476 563 437</a>
+            <a href="tel:+351213860577" style="color:#D7E0E7">+351 21 386 0577</a>
+            <div class="social"><span>in</span><span>ig</span><span>x</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="offices">
+        <div><strong style="color:#FAFAFA">London</strong><br><span style="opacity:.8">United Kingdom</span><br>Northside House, Mount Pleasant, Cockfosters, EN4 9EB</div>
+        <div><strong style="color:#FAFAFA">Lisbon</strong><br><span style="opacity:.8">Portugal</span><br>Av. Ant. Aug. de Aguiar 108, 3º, 1050‑019 Lisbon</div>
+        <div><strong style="color:#FAFAFA">Coimbra</strong><br><span style="opacity:.8">Portugal</span><br>R. Pedro Nunes, Edifício C, 3030‑199 Coimbra</div>
+      </div>
+      <div class="foot-bottom">
+        <div>© <span id="year-foot"></span> GMV Technologies</div>
+        <div style="display:flex;gap:16px"><a href="#" style="color:#9FB0BC">Company Policy</a><a href="#" style="color:#9FB0BC">Privacy Policy</a></div>
+      </div>
     </div>
-  </section>
+  </footer>
 
+  <!-- GSAP -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script>
-    document.getElementById('year').textContent=new Date().getFullYear();
-
-    const tabs=[...document.querySelectorAll('.tab')];
-    const panels=[...document.querySelectorAll('.panel')];
-    const counts={};
-    panels.forEach(p=>counts[p.dataset.panel]=p.querySelectorAll('.chip').length);
-    tabs.forEach(b=>{b.querySelector('.count').textContent=counts[b.dataset.tab]||0});
-    function activate(key){
-      tabs.forEach(t=>{const on=t.dataset.tab===key;t.classList.toggle('active',on);t.setAttribute('aria-selected',on)});
-      panels.forEach(p=>{const on=p.dataset.panel===key;p.hidden=!on;});
-      const grid=document.getElementById('chips-'+key); if(grid){gsap.fromTo(grid.children,{y:8,opacity:0},{y:0,opacity:1,stagger:0.05,duration:0.35,ease:'power1.out'});}
-    }
-    tabs.forEach(b=>b.addEventListener('click',()=>{activate(b.dataset.tab);location.hash='stack'}));
-    activate(document.querySelector('.tab.active')?.dataset.tab||'design');
-
+    document.getElementById('year-foot').textContent=new Date().getFullYear();
     if(window.matchMedia('(prefers-reduced-motion: no-preference)').matches){
       gsap.registerPlugin(ScrollTrigger);
       gsap.from('#badge',{y:-12,opacity:0,duration:.5,ease:'power2.out'});
       gsap.from('#hero-title',{y:10,opacity:0,duration:.55,delay:.05});
       gsap.from('#hero-sub',{y:10,opacity:0,duration:.55,delay:.12});
       gsap.from('#hero-ctas',{y:10,opacity:0,duration:.55,delay:.2});
-      gsap.from('#hero-pills',{y:10,opacity:0,duration:.55,delay:.28});
-      gsap.from('#hero-stats .stat',{y:10,opacity:0,stagger:0.06,duration:.45,delay:.38});
-      gsap.from('#future-box',{y:16,opacity:0,duration:.6,delay:.2,ease:'power2.out'});
-
-      gsap.utils.toArray('#cap-grid .card').forEach((el,i)=>{
-        gsap.from(el,{scrollTrigger:{trigger:el,start:'top 85%'},y:14,opacity:0,duration:.45,delay:i*0.03});
-      });
-      gsap.from('#stack-title',{scrollTrigger:{trigger:'#stack-title',start:'top 85%'},y:8,opacity:0,duration:.45});
+      gsap.from('#hero-stats .card',{y:10,opacity:0,stagger:0.06,duration:.45,delay:.28});
+      gsap.from('#future-box',{y:16,opacity:0,duration:.6,delay:.25,ease:'power2.out'});
+      gsap.utils.toArray('#cap-grid .card').forEach((el,i)=>{gsap.from(el,{scrollTrigger:{trigger:el,start:'top 85%'},y:14,opacity:0,duration:.45,delay:i*0.03})});
+      gsap.utils.toArray('#stack-grid .stack-card').forEach((el,i)=>{gsap.from(el,{scrollTrigger:{trigger:el,start:'top 85%'},y:14,opacity:0,duration:.45,delay:i*0.03})});
     }
   </script>
 </body>
