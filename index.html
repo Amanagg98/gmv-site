@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GMV Technologies — HTML Sitemap (Responsive)</title>
+<style>
+  :root{--bg:#0b0f14;--card:#121820;--muted:#98a2b3;--text:#eef2f7;--link:#7dd3fc;--link-hover:#c084fc;--border:#1f2937}
+  body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;background:#0b0f14;color:var(--text)}
+  header{position:sticky;top:0;z-index:10;display:flex;gap:12px;align-items:center;padding:12px 16px;background:#0b0f14e6;border-bottom:1px solid var(--border);backdrop-filter:blur(8px)}
+  #menuBtn{appearance:none;border:1px solid var(--border);background:#12182099;color:var(--text);padding:8px 10px;border-radius:10px;display:inline-flex;gap:8px;align-items:center}
+  #menuBtn svg{width:18px;height:18px}
+  .wrap{display:grid;grid-template-columns:1fr}
+  nav{position:fixed;inset:0 auto 0 0;width:280px;transform:translateX(-100%);transition:.25s;background:#121820f8;border-right:1px solid var(--border);padding:16px}
+  nav.open{transform:translateX(0)}
+  nav h2{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.12em;margin:8px 0 12px}
+  nav a{display:block;color:var(--link);text-decoration:none;padding:8px 10px;border-radius:8px}
+  nav a:hover{background:#7dd3fc14;color:var(--link-hover)}
+  main{padding:18px 16px 64px;max-width:1200px;margin:0 auto}
+  .section-card{border:1px solid var(--border);border-radius:16px;padding:16px;margin:12px 0 22px;background:linear-gradient(180deg,#121820cc,#12182080)}
+  .lede{color:#cbd5e1;margin:6px 0 12px;line-height:1.6}
+  .grid{display:grid;grid-template-columns:repeat(1,minmax(0,1fr));gap:10px}
+  .item{border:1px solid var(--border);border-radius:14px;padding:12px;background:#0b0f1424}
+  .item a{color:var(--link);text-decoration:none;font-weight:600}
+  .item a:hover{color:var(--link-hover)}
+  .slug{display:inline-block;margin-top:6px;font-family:ui-monospace,Menlo,monospace;font-size:12px;color:var(--muted)}
+  @media (min-width:900px){.wrap{grid-template-columns:280px 1fr}nav{position:sticky;transform:none;inset:auto;height:calc(100vh - 52px);top:52px;background:#12182099}#menuBtn{display:none}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  @media (min-width:1200px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+</style>
+<script>
+  function toggleNav(){document.querySelector('nav').classList.toggle('open')}
+</script>
+</head>
+<body>
+  <header>
+    <button id="menuBtn" onclick="toggleNav()" aria-label="Toggle menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      Menu
+    </button>
+    <h1 style="font-size:16px;margin:0">GMV Technologies — HTML Sitemap</h1>
+    <span style="margin-left:auto;font-size:12px;color:#a7f3d0" id="status"></span>
+  </header>
+  <div class="wrap">
+    <nav>
+      <h2>Top-level</h2>
+      <a href="#home" onclick="toggleNav()">Homepage</a>
+      <a href="#about" onclick="toggleNav()">About</a>
+      <a href="#services" onclick="toggleNav()">Solutions & Services</a>
+      <a href="#tech" onclick="toggleNav()">Tech Stack & Tooling</a>
+      <a href="#tracks" onclick="toggleNav()">Guided Growth Tracks</a>
+      <a href="#industries" onclick="toggleNav()">Industries</a>
+      <a href="#impact" onclick="toggleNav()">Results & Impact</a>
+      <a href="#work" onclick="toggleNav()">How We Work</a>
+      <a href="#clients" onclick="toggleNav()">Our Clients</a>
+      <a href="#cases" onclick="toggleNav()">Case Studies</a>
+      <a href="#testimonials" onclick="toggleNav()">Client Testimonials</a>
+      <a href="#insights" onclick="toggleNav()">Latest Articles</a>
+      <a href="#faqs" onclick="toggleNav()">FAQs</a>
+      <a href="#contact" onclick="toggleNav()">Contact Us</a>
+    </nav>
+    <main>
+      <section id="home" class="section-card">
+        <h3>Homepage</h3>
+        <p class="lede"><strong>BUILD STRONGER | SCALE SMARTER | DELIVER FASTER</strong><br>At GMV Technologies, we don’t just build software, we accelerate ventures.</p>
+        <ul><li><strong>Trusted by:</strong> Client 1–8…</li><li><strong>Slug:</strong> <code>/</code></li></ul>
+      </section>
+      <section id="about" class="section-card">
+        <h3>About GMV Technologies</h3>
+        <p class="lede">Engineering innovation through specialized divisions—where design-first thinking meets robust engineering and enterprise transformation.</p>
+        <div class="grid">
+          <div class="item"><a href="/about">About</a><div class="slug">/about</div></div>
+          <div class="item"><a href="/about/mission-vision">Mission & Vision</a><div class="slug">/about/mission-vision</div></div>
+          <div class="item"><a href="/about/approach">Our Approach</a><div class="slug">/about/approach</div></div>
+          <div class="item"><a href="/about/leadership">Leadership</a><div class="slug">/about/leadership</div></div>
+          <div class="item"><a href="/about/careers">Careers</a><div class="slug">/about/careers</div></div>
+        </div>
+      </section>
+      <section id="services" class="section-card">
+        <h3>Solutions & Services</h3>
+        <p class="lede">We turn ideas into scalable digital products across design, engineering, enterprise, blockchain, and cloud.</p>
+        <div class="grid">
+          <div class="item"><a href="/services">Services Hub</a><div class="slug">/services</div></div>
+          <div class="item"><a href="/services/gmv-studio">GMV Studio</a><div class="slug">/services/gmv-studio</div></div>
+          <div class="item"><a href="/services/gmv-forge">GMV Forge</a><div class="slug">/services/gmv-forge</div></div>
+          <div class="item"><a href="/services/gmv-core">GMV Core</a><div class="slug">/services/gmv-core</div></div>
+          <div class="item"><a href="/services/gmv-chain">GMV Chain</a><div class="slug">/services/gmv-chain</div></div>
+          <div class="item"><a href="/services/gmv-cloudops">GMV CloudOps</a><div class="slug">/services/gmv-cloudops</div></div>
+        </div>
+      </section>
+      <section id="tech" class="section-card"><h3>Tech Stack & Tooling</h3>
+        <div class="grid">
+          <div class="item"><a href="/tech">Tech Hub</a><div class="slug">/tech</div></div>
+          <div class="item"><a href="/tech/design">Design Tooling</a><div class="slug">/tech/design</div></div>
+          <div class="item"><a href="/tech/web-mobile">Web & Mobile</a><div class="slug">/tech/web-mobile</div></div>
+          <div class="item"><a href="/tech/enterprise">Enterprise</a><div class="slug">/tech/enterprise</div></div>
+          <div class="item"><a href="/tech/blockchain">Blockchain</a><div class="slug">/tech/blockchain</div></div>
+          <div class="item"><a href="/tech/cloud">Cloud & DevSecOps</a><div class="slug">/tech/cloud</div></div>
+        </div>
+      </section>
+      <section id="tracks" class="section-card"><h3>Guided Growth Tracks™</h3>
+        <div class="grid">
+          <div class="item"><a href="/tracks">Tracks Hub</a><div class="slug">/tracks</div></div>
+          <div class="item"><a href="/tracks/genesis">Genesis Track</a><div class="slug">/tracks/genesis</div></div>
+          <div class="item"><a href="/tracks/momentum">Momentum Track</a><div class="slug">/tracks/momentum</div></div>
+          <div class="item"><a href="/tracks/velocity">Velocity Track</a><div class="slug">/tracks/velocity</div></div>
+        </div>
+      </section>
+      <section id="industries" class="section-card"><h3>Industries</h3>
+        <div class="grid">
+          <div class="item"><a href="/industries">Industries Hub</a><div class="slug">/industries</div></div>
+          <div class="item"><a href="/industries/healthcare">Healthcare & Wellness</a><div class="slug">/industries/healthcare</div></div>
+          <div class="item"><a href="/industries/retail-ecommerce">Retail & E-commerce</a><div class="slug">/industries/retail-ecommerce</div></div>
+          <div class="item"><a href="/industries/professional-services">Professional Services</a><div class="slug">/industries/professional-services</div></div>
+          <div class="item"><a href="/industries/manufacturing-supply-chain">Manufacturing & Supply Chain</a><div class="slug">/industries/manufacturing-supply-chain</div></div>
+          <div class="item"><a href="/industries/fintech">FinTech & Digital Banking</a><div class="slug">/industries/fintech</div></div>
+          <div class="item"><a href="/industries/edtech">EdTech & Learning Platforms</a><div class="slug">/industries/edtech</div></div>
+        </div>
+      </section>
+      <section id="impact" class="section-card"><h3>Results & Impact</h3>
+        <div class="grid">
+          <div class="item"><a href="/impact">Impact Overview</a><div class="slug">/impact</div></div>
+          <div class="item"><a href="/impact/metrics">Key Metrics</a><div class="slug">/impact/metrics</div></div>
+          <div class="item"><a href="/impact/roi-stories">ROI Stories</a><div class="slug">/impact/roi-stories</div></div>
+        </div>
+      </section>
+      <section id="work" class="section-card"><h3>How We Work (Engagement Models)</h3>
+        <div class="grid">
+          <div class="item"><a href="/how-we-work">Overview</a><div class="slug">/how-we-work</div></div>
+          <div class="item"><a href="/how-we-work/elastic">Elastic Mode</a><div class="slug">/how-we-work/elastic</div></div>
+          <div class="item"><a href="/how-we-work/milestone">Milestone Mode</a><div class="slug">/how-we-work/milestone</div></div>
+          <div class="item"><a href="/how-we-work/coreteam">CoreTeam Mode</a><div class="slug">/how-we-work/coreteam</div></div>
+        </div>
+      </section>
+      <section id="clients" class="section-card"><h3>Our Clients</h3>
+        <div class="grid">
+          <div class="item"><a href="/clients">Clients Overview</a><div class="slug">/clients</div></div>
+          <div class="item"><a href="/clients/spotlights">Client Spotlights</a><div class="slug">/clients/spotlights</div></div>
+        </div>
+      </section>
+      <section id="cases" class="section-card"><h3>Case Studies</h3>
+        <div class="grid">
+          <div class="item"><a href="/case-studies">All Case Studies</a><div class="slug">/case-studies</div></div>
+          <div class="item"><a href="/case-studies/by-industry">By Industry</a><div class="slug">/case-studies/by-industry</div></div>
+          <div class="item"><a href="/case-studies/by-stack">By Stack</a><div class="slug">/case-studies/by-stack</div></div>
+        </div>
+      </section>
+      <section id="testimonials" class="section-card"><h3>Client Testimonials</h3>
+        <div class="grid">
+          <div class="item"><a href="/testimonials">Testimonials</a><div class="slug">/testimonials</div></div>
+          <div class="item"><a href="/testimonials/videos">Video Testimonials</a><div class="slug">/testimonials/videos</div></div>
+        </div>
+      </section>
+      <section id="insights" class="section-card"><h3>Latest Articles</h3>
+        <div class="grid">
+          <div class="item"><a href="/insights">Blog & Insights</a><div class="slug">/insights</div></div>
+          <div class="item"><a href="/insights/guides">Guides</a><div class="slug">/insights/guides</div></div>
+          <div class="item"><a href="/insights/news">GMV News</a><div class="slug">/insights/news</div></div>
+        </div>
+      </section>
+      <section id="faqs" class="section-card"><h3>FAQs</h3>
+        <div class="grid">
+          <div class="item"><a href="/faqs">FAQs</a><div class="slug">/faqs</div></div>
+          <div class="item"><a href="/faqs/security">Security & Compliance</a><div class="slug">/faqs/security</div></div>
+          <div class="item"><a href="/faqs/engagement">Engagement & Billing</a><div class="slug">/faqs/engagement</div></div>
+        </div>
+      </section>
+      <section id="contact" class="section-card"><h3>Contact Us</h3>
+        <div class="grid">
+          <div class="item"><a href="/contact">Contact Form</a><div class="slug">/contact</div></div>
+          <div class="item"><a href="/contact/book-a-call">Book a Call</a><div class="slug">/contact/book-a-call</div></div>
+          <div class="item"><a href="/contact/locations">Locations</a><div class="slug">/contact/locations</div></div>
+        </div>
+      </section>
+      <footer style="text-align:center;color:#98a2b3;padding:24px">© GMV Technologies — HTML Sitemap (Responsive)</footer>
+    </main>
+  </div>
+</body>
+</html>
